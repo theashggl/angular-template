@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { HomePageComponent } from '../home-page/home-page/home-page.component';
 import { KeyValuePipe, NgClass } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root', //Notes What is defined here is the component name of this component that can be used somewhere else in an html file. Has to be unique
   standalone: true,
-  imports: [RouterOutlet, HomePageComponent, FormsModule, KeyValuePipe],
+  imports: [RouterOutlet, FormsModule, KeyValuePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
