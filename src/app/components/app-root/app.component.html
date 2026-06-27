@@ -1,6 +1,39 @@
 <html>
   <head></head>
   <body>
-    <h1>hello ji</h1>
+    <label for="w3review">Input your text</label>
+    <textarea
+      id="w3review"
+      name="w3review"
+      rows="4"
+      cols="50"
+      [(ngModel)]="input"
+    >
+<!--Two way binded directive so the input reflects in the component class and vice versa-->
+    </textarea>
+    <br />
+    <label for="inputOfUser">Your input: </label>
+    <p id="inputOfUser">{{ input }}</p>
+    <button (click)="onClick()">click me</button>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Word</th>
+          <th scope="col">Count</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of map | keyvalue; track item) {
+          <!--Syntax for a loop to go throught eh html elements-->
+          <tr>
+            <th scope="row">{{ $index + 1 }}</th>
+            <!--using the contextual variable for accessing index of the element in the loop-->
+            <td>{{ item.key }}</td>
+            <td>{{ item.value }}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
   </body>
 </html>
